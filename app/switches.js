@@ -7,7 +7,40 @@
     // output: 7
 
 function daysPosition(day, offset) {
+    let dayIndex = 0
+    switch(day.toLowerCase()){
+        case "sunday":
+            dayIndex = 1
+            break;
+        case "monday":
+            dayIndex = 2
+            break;
+        case "tuesday":
+            dayIndex = 3
+            break;
+        case "wednesday":
+            dayIndex = 4
+            break;
+        case "thursday":
+            dayIndex = 5
+            break;
+        case "friday":
+            dayIndex = 6
+            break;
+        case "saturday":
+            dayIndex = 7
+            break;
 
+        default:
+            return "That's not a day of the week"
+    }
+    if (offset){
+        dayIndex--;
+        if (!dayIndex) {
+            return 7
+        }
+    }
+    return dayIndex
 }
 
 
